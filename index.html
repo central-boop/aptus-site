@@ -853,7 +853,7 @@ footer a{color:var(--branco)}
     var corpo = Object.assign({id: id, nome: c.nome, email: c.email, telefone: c.telefone, origem: origem,
       pagina: location.href.slice(0,300), fbp: cookie('_fbp'), fbc: cookie('_fbc')}, r.dados, utm());
     try {
-      fetch('/api/lead', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(corpo), keepalive: true})
+      fetch('https://aptus-obras.pages.dev/api/lead', {method:'POST', mode:'no-cors', headers:{'content-type':'text/plain'}, body: JSON.stringify(corpo), keepalive: true})
         .then(function(){ setTimeout(ir, 250); }, function(){ ir(); });
     } catch(e){}
     setTimeout(ir, 1800);
